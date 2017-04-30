@@ -41,6 +41,10 @@ class User < ActiveRecord::Base
   #Проверка максимальной длины юзернейма пользователя (не больше 40 символов)
   validates :username, :length => { :maximum => 40 }
 
+  #Проверка формата юзернейма пользователя (только латинские буквы, цифры, и знак _)
+  validates :username, format: { with: /\w+[A-Za-z]\w+/,
+  message: "only allows letters" }
+
   # Поле password нужно только при создании (create) нового юзера — регистрации.
   # При аутентификации (логине) мы будем сравнивать уже зашифрованные поля.
   validates :password, presence: true, on: :create
