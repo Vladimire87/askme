@@ -36,7 +36,10 @@ class User < ActiveRecord::Base
   validates :email, :username, uniqueness: true
 
   #Проверка формата электронной почты пользователя
-  validates :my_email_attribute, email: true
+  validates :email, email: true
+
+  #Проверка максимальной длины юзернейма пользователя (не больше 40 символов)
+  validates :username, :length => { :maximum => 40 }
 
   # Поле password нужно только при создании (create) нового юзера — регистрации.
   # При аутентификации (логине) мы будем сравнивать уже зашифрованные поля.
