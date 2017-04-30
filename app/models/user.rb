@@ -35,6 +35,9 @@ class User < ActiveRecord::Base
   # сохранен в базу.
   validates :email, :username, uniqueness: true
 
+  #Проверка формата электронной почты пользователя
+  validates :my_email_attribute, email: true
+
   # Поле password нужно только при создании (create) нового юзера — регистрации.
   # При аутентификации (логине) мы будем сравнивать уже зашифрованные поля.
   validates :password, presence: true, on: :create

@@ -15,6 +15,8 @@ class UsersController < ApplicationController
     # Создали две instance variables — они будут доступны во вьюхе.
     @time = Time.now
     @hello = "Пока, лунатикам!"
+    @num1 = 500
+    @num2 = 350
   end
 
   # По умолчанию после завершения метода 'show' рельсы отображают шаблон

@@ -7,6 +7,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.6'
 gem 'jquery-rails'
+gem 'email_validator'
 
 group :development, :test do
   gem 'byebug'
